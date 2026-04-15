@@ -34,21 +34,31 @@ Built on the same architecture as Claude Code, but with multi-provider support a
 
 ## Supported Models
 
-### ChatGPT Provider
+### ChatGPT Provider (OpenAI)
 | Model | Description |
 |-------|-------------|
-| `gpt-5.3-codex` | Latest GPT coding model |
+| `gpt-5.4` | GPT-5.4 — flagship, reasoning + vision |
+| `gpt-5.4-pro` | GPT-5.4 Pro — extended reasoning (Pro plan) |
+| `gpt-5.4-mini` | GPT-5.4 Mini — fast reasoning |
+| `gpt-5.4-nano` | GPT-5.4 Nano — fastest |
+| `gpt-5.2` | GPT-5.2 — previous gen reasoning |
+| `gpt-5.2-pro` | GPT-5.2 Pro — previous gen extended |
+| `gpt-4.1` | GPT-4.1 — legacy all-rounder |
+| `gpt-4.1-mini` | GPT-4.1 Mini — legacy fast |
+| `gpt-5.4-codex` | Codex GPT-5.4 via ChatGPT backend |
+| `gpt-5.4-mini-codex` | Codex GPT-5.4 Mini |
+| `gpt-5.3-codex` | Codex GPT-5.3 |
+| `gpt-5.2-codex` | Codex GPT-5.2 |
 
 ### Google Provider (Antigravity)
 | Model | Description |
 |-------|-------------|
 | `claude-opus-4-6-thinking` | Most capable reasoning model |
+| `claude-sonnet-4-6-thinking` | Fast reasoning |
 | `claude-sonnet-4-6` | Fast + capable (default) |
-| `gemini-2.5-pro` | Google's flagship model |
-| `gemini-2.5-flash` | Fast and efficient |
-| `gemini-3-pro-high` | Next-gen high quality |
-| `gemini-3-flash` | Next-gen fast |
-| + more | 14 models total |
+| `gemini-3.1-pro-high` | Gemini 3.1 Pro — high quality |
+| `gemini-3.1-flash` | Gemini 3.1 Flash — fast |
+| `gemini-3-flash` | Gemini 3 Flash |
 
 ## Quick Start
 
