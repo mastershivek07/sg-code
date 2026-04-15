@@ -17,6 +17,8 @@
 
 SG CODE is a desktop application that gives you an AI coding assistant right in your terminal. Think of it as having a senior developer pair-programming with you — it can read your code, edit files, run commands, and reason about your entire project.
 
+Built on the same architecture as Claude Code, but with multi-provider support and a native desktop experience.
+
 **No API keys needed.** Sign in with your existing ChatGPT or Google account.
 
 ## Features
@@ -25,8 +27,10 @@ SG CODE is a desktop application that gives you an AI coding assistant right in 
 - **Native Terminal** — Full xterm.js terminal with 256-color support, not a web wrapper
 - **Multi-Tab Sessions** — Run multiple coding sessions side by side
 - **Model Switching** — Switch between models on the fly (`/model`)
-- **Auto-Updates** — Always stay on the latest version
-- **Cross-Platform** — macOS and Windows
+- **File Browser** — Built-in sidebar file explorer
+- **Auto-Updates** — Always stay on the latest version via GitHub Releases
+- **Cross-Platform** — macOS (Intel + Apple Silicon) and Windows (x64)
+- **Privacy-First** — Your code stays on your machine; only explicit AI requests go to the provider
 
 ## Supported Models
 
@@ -51,8 +55,9 @@ SG CODE is a desktop application that gives you an AI coding assistant right in 
 1. **Download** the latest release for your platform
 2. **Install** — drag to Applications (macOS) or run the installer (Windows)
 3. **Launch** SG CODE
-4. **Sign in** with ChatGPT or Google
-5. **Start coding** — open a folder and ask the AI anything
+4. **Choose your provider** — ChatGPT or Google (Antigravity)
+5. **Sign in** with your account
+6. **Start coding** — open a folder and ask the AI anything
 
 ## How It Works
 
@@ -65,6 +70,56 @@ SG CODE runs a local proxy that translates between your AI provider account and 
 └─────────────┘     └──────────────┘     └─────────────────┘
      Your machine         Your machine         Cloud API
 ```
+
+## Project Structure
+
+```
+sg-code-v2/
+├── main.js              # Electron main process
+├── preload.js           # IPC bridge
+├── proxy.mjs            # ChatGPT OAuth proxy (port 4141)
+├── cli-bundle.mjs       # Bundled AI coding agent
+├── supabase.js          # Usage tracking & entitlements
+├── afterPack.js         # Cross-platform native binary cleanup
+├── renderer/
+│   ├── index.html       # Main window
+│   ├── app.js           # Tab/session management, xterm.js
+│   └── styles.css       # Green terminal theme
+├── antigravity-proxy/   # Google OAuth proxy (port 4142)
+│   └── src/
+├── assets/              # App icons
+└── package.json         # Electron + electron-builder config
+```
+
+## Building from Source
+
+### Prerequisites
+- Node.js 18+
+- npm
+
+### Install Dependencies
+```bash
+npm install
+```
+
+### Run in Development
+```bash
+npm start
+```
+
+### Build Installers
+```bash
+# macOS
+npm run build
+
+# Windows (from macOS or Windows)
+npm run build:win
+
+# All platforms
+npm run build:all
+```
+
+Installers are output to the `dist/` folder.
 
 ## System Requirements
 
@@ -79,11 +134,12 @@ SG CODE runs a local proxy that translates between your AI provider account and 
 
 | Shortcut | Action |
 |----------|--------|
-| `Cmd/Ctrl + T` | New tab |
+| `Cmd/Ctrl + N` | New tab |
 | `Cmd/Ctrl + W` | Close tab |
+| `Cmd/Ctrl + B` | Toggle sidebar |
+| `Cmd/Ctrl + 1-9` | Switch to tab |
 | `/model` | Switch AI model |
 | `/help` | Show all commands |
-| `Cmd/Ctrl + ,` | Settings |
 
 ## FAQ
 
@@ -97,11 +153,11 @@ SG CODE runs entirely on your machine. The only external calls are to the AI mod
 The terminal works offline, but AI features require an internet connection to reach the model provider.
 
 **Is this open source?**
-The desktop app is distributed as a compiled application. The AI coding engine is based on open-source technology.
+Yes — the source code is available in this repository. The AI coding engine is based on open-source technology.
 
 ## License
 
-SG CODE is free to use. See [LICENSE](LICENSE) for details.
+MIT — see [LICENSE](LICENSE) for details.
 
 ---
 
