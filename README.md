@@ -33,7 +33,20 @@ SG CODE is a **Claude Code-like** desktop application that gives you an AI codin
 ### ChatGPT Provider (OpenAI)
 | Model | Description |
 |-------|-------------|
-| `gpt-5.3-codex` | Latest GPT coding model |
+| `gpt-5.4` | GPT-5.4 — flagship, reasoning + vision (default) |
+| `gpt-5.4-pro` | GPT-5.4 Pro — extended reasoning (Pro plan) |
+| `gpt-5.4-mini` | GPT-5.4 Mini — fast reasoning |
+| `gpt-5.4-nano` | GPT-5.4 Nano — fastest |
+| `gpt-5.2` | GPT-5.2 — previous gen reasoning |
+| `gpt-5.2-pro` | GPT-5.2 Pro — previous gen extended |
+| `gpt-4.1` | GPT-4.1 — legacy all-rounder |
+| `gpt-4.1-mini` | GPT-4.1 Mini — legacy fast |
+| `gpt-5.4-codex` | [Codex] GPT-5.4 via ChatGPT backend |
+| `gpt-5.4-mini-codex` | [Codex] GPT-5.4 Mini via ChatGPT backend |
+| `gpt-5.3-codex` | [Codex] GPT-5.3 Codex |
+| `gpt-5.3-codex-spark` | [Codex] GPT-5.3 Codex Spark (entitlement) |
+| `gpt-5.2-codex` | [Codex] GPT-5.2 Codex |
+| `gpt-5.1-codex` | [Codex] GPT-5.1 Codex (legacy) |
 
 ### Google Provider (Antigravity)
 | Model | Description |
