@@ -74,6 +74,20 @@ SG CODE is a **Claude Code-like** desktop application that gives you an AI codin
 4. **Sign in** with ChatGPT or Google
 5. **Start coding** — open a folder and ask the AI anything
 
+## Screenshots
+
+### Provider Selection
+
+![SG CODE provider selection](screenshots/sgcode1.1.png)
+
+### Main Session View
+
+![SG CODE main session](screenshots/sgcode2.png)
+
+### Active Conversation
+
+![SG CODE active conversation](screenshots/sgcode3.png)
+
 ## How It Works
 
 SG CODE runs a local proxy that translates between your AI provider account and the coding agent. Everything runs on your machine — your code never leaves your computer (except what you explicitly send to the AI model).
